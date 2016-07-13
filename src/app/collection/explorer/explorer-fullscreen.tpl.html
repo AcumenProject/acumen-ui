@@ -1,0 +1,22 @@
+<div class="fullscrn">
+    <div class="toolbar toolbar-static toolbar-fullscreen">
+
+        <div class="toolset toolset-title text-center">
+            <h3>{{acumen.collection.title | truncate:95}}</h3>
+        </div>
+
+        <div class="toolset toolset-fullscreen-nav pull-right">
+            <div class="btn-group">
+                <button type="button"class="btn btn-primary" title="Back browser history" history-button="back"><span class="fa fa-chevron-left"></span></button>
+                <a ng-href="{{ENV_PATH}}{{acumen.collection.parent.link}}?page={{acumen.collection.toPage}}"
+                   rol="button"
+                   class="btn btn-primary"
+                   title='Go to parent collection: "{{acumen.collection.parent.title}}"'
+                   ng-if="acumen.collection.parent.id > 0"><i class="fa fa-level-up"></i></a>
+
+                <button type="button" class="btn btn-primary" title="Forward browser history" history-button="forward"><span class="fa fa-chevron-right"></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="explorer" fullscreen-explorer></div>
+</div>

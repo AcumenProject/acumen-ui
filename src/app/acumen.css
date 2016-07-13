@@ -1,0 +1,164 @@
+html, body{
+    height:100%;
+}
+body{
+    background-color: #f0efef;
+}
+
+a:visited{
+    /*color: #393F7F;*/
+}
+
+.acumen-nav{
+    margin-bottom: 0;
+}
+
+.page-wrapper{
+    min-height: 100%;
+    margin-bottom: -200px;
+    padding-bottom: 200px;
+}
+
+.page-wrapper:after{
+    content: "";
+    display: block;
+}
+
+.footer-wrapper{
+    background-color: #ccc;
+    min-height: 230px;
+}
+
+.footer-logo{
+    margin: 10px;
+}
+
+.footer-wrapper .warning{
+    color: #eea236;
+}
+
+.footer-nav{
+    background-color: #444;
+}
+
+.alerts-wrapper{
+    position: absolute;
+    z-index: 2000;
+    top: 10px;
+}
+
+.page-nav, .page-nav:visited{
+    font-size: 50px;
+    color: #ccc;
+}
+
+.page-nav:hover{
+    color: #666;
+    text-decoration: none;
+}
+
+dt:not(:first-child){
+    margin-top: 20px;
+}
+
+.loading-wrapper{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    top: 51px;
+    z-index: 3000;
+    display: none;
+}
+
+.fixieloader{
+    position: fixed;
+    z-index: 10002;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.dis-email{
+    display: none;
+}
+
+.help-cursor:hover{
+    cursor: help;
+}
+
+.wait-cursor{
+    cursor: wait !important;
+}
+
+.fixie{
+    position: fixed;
+    top: 20px;
+    width: 132px;
+}
+
+.ie8-msg{
+    margin: 0 auto;
+    width: 60%;
+}
+
+/* Home Page Styles */
+
+.home-slice{
+    margin-bottom: 0;
+}
+
+.home-slice-dark{
+    padding:20px 30px;
+    background-color: #333;
+    margin-bottom:0;
+    color: #f6f6f6;
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    inset 0px 0px 8px 0px rgba(50, 50, 50, 1);
+    box-shadow:         inset 0px 0px 8px 0px rgba(50, 50, 50, 1);
+}
+
+.home-slice-light-orange{
+    background-color: #fcf8f2;
+    border-left: 5px solid #f0ad4e;
+}
+
+.alert-container {
+    position: fixed;
+    z-index: 5000;
+    top: 15px;
+    right: 15px
+}
+
+
+.animate-alert {
+    min-width: 500px;
+    white-space: nowrap;
+    -moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#666666');
+}
+
+.animate-alert.ng-move,
+.animate-alert.ng-enter,
+.animate-alert.ng-leave {
+    -webkit-transition: 500ms linear all;
+    -o-transition: 500ms linear all;
+    transition: 500ms linear all;
+
+    display: block;
+    overflow: hidden;
+}
+.animate-alert.ng-leave.ng-leave-active,
+.animate-alert.ng-move,
+.animate-alert.ng-enter {
+    opacity: 0;
+    max-height: 0;
+}
+.animate-alert.ng-leave,
+.animate-alert.ng-move.ng-move-active,
+.animate-alert.ng-enter.ng-enter-active {
+    opacity: 1;
+    max-height: 200px;
+}

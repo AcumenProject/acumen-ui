@@ -1,0 +1,43 @@
+{
+  "name": "acumen-ui",
+  "homepage": "https://github.com/AcumenProject/acumen-ui",
+  "authors": [
+    "Will Jones <the8bitsquid@gmail.com>"
+  ],
+  "description": "Front-end Angular UI for the Acumen digital archives explorer",
+  "main": "dist/acumen.js",
+  "keywords": [
+    "Acumen"
+  ],
+  "license": "ECL 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "acumen-xsl": "https://github.com/AcumenProject/acumen-xsl.git#~1.0.0",
+    "angular-print-button": "https://github.com/8bitsquid/angular-print-button.git#master",
+    "angular-hotkeys": "angular-cfp-hotkeys#1.4.1",
+    "angular-mousewheel": "1.0.4",
+    "angular-ui-router": "0.2.18",
+    "hamsterjs": "1.0.5",
+    "mediaelement": "2.14.2",
+    "angular-bootstrap": "0.12.0",
+    "angular-loading-bar": "^0.9.0"
+  },
+  "devDependencies": {
+    "jquery": "jQuery#1.11.0",
+    "angular": "1.2.29",
+    "angular-sanitize": "1.2.29",
+    "angular-animate": "1.2.29",
+    "angular-cookies": "1.2.29",
+    "underscore": "1.4.4",
+    "restangular": "1.3.1",
+    "font-awesome": "fontawesome#^4.6.3",
+    "bootstrap": "^3.3.6"
+  }
+}

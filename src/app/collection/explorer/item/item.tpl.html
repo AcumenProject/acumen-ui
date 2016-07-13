@@ -1,0 +1,34 @@
+<div class="row">
+    <div ui-view class="item item-{{item.type}}" ng-class="$state.current.data.itemCss"></div>
+    <div class="item-detail-container" ng-class="$state.current.data.detailContainer">
+        <div class="toolbar toolbar-vert">
+            <div class="toolset pull-right">
+                <div ng-click="toggleState('.metadata')"
+                     class="tool glyphicon glyphicon-info-sign"
+                     ng-class="{'selected': $state.includes('explorer.collection.item.*.metadata')}"
+                     tooltip="About this item"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="About this item"
+                     ng-show="metadata"></div>
+
+                <div ng-click="toggleState('.transcripts')"
+                     class="tool glyphicon glyphicon-file"
+                     ng-class="{'selected': $state.includes('explorer.collection.item.*.transcript')}"
+                     tooltip="Transcript"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="Transcript"></div>
+
+                <div ng-click="toggleState('.tags')"
+                     class="tool glyphicon glyphicon-tags"
+                     ng-class="{'selected': $state.includes('explorer.collection.item.*.tags')}"
+                     tooltip="Tags"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="Tags"></div>
+            </div>
+        </div>
+        <div ui-view="detail" class="detail" ng-class="$state.current.data.detailCss"></div>
+    </div>
+</div>

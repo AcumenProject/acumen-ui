@@ -1,0 +1,43 @@
+<div class="row video-row">
+    <div class="item" ng-class="$state.current.data.itemCss">
+        <div class="video-player-wrapper">
+            <video ng-src='{{item.asset_path}}'
+                   preload='auto'
+                   controls='controls'
+                   mediaelement="video">
+                <source type='video/mp4' ng-src='{{item.asset_path}}' />
+            </video>
+        </div>
+    </div>
+    <div class="item-detail-container" ng-class="$state.current.data.detailContainer">
+        <div class="toolbar toolbar-vert">
+            <div class="toolset pull-right">
+                <div ng-click="toggleState('.metadata')"
+                     class="tool glyphicon glyphicon-info-sign"
+                     ng-class="{'selected': $state.is('colleciton.explorer.item.video.metadata')}"
+                     tooltip="About this item"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="About this item"
+                     ng-show="metadata.value"></div>
+
+                <div ng-click="toggleState('.transcripts')"
+                     class="tool glyphicon glyphicon-file"
+                     ng-class="{'selected': $state.is('colleciton.explorer.item.video.transcript')}"
+                     tooltip="Transcript"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="Transcript"></div>
+
+                <div ng-click="toggleState('.tags')"
+                     class="tool glyphicon glyphicon-tags"
+                     ng-class="{'selected': $state.is('colleciton.explorer.item.video.tags')}"
+                     tooltip="Tags"
+                     tooltip-placement="left"
+                     tooltip-popup-delay="300"
+                     title="Tags"></div>
+            </div>
+        </div>
+        <div ui-view="detail" class="detail" ng-class="$state.current.data.detailCss"></div>
+    </div>
+</div>

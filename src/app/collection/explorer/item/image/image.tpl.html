@@ -1,0 +1,60 @@
+<canvas id="asset_image" class="asset-image" ng-class="imageTools.current"  msd-wheel="mouseZoom($event, $delta)"></canvas>
+
+<div id="image_toolbar" class="toolbar toolbar-vert">
+    <div class="toolset toolset-top">
+        <span class="tool glyphicon glyphicon-move"
+              ng-click="imageTools.select('move')"
+              ng-class="{selected: imageTools.current == 'move'}"
+              tooltip="Drag Image"
+              tooltip-placement="right"></span>
+        <span class="tool glyphicon glyphicon-repeat"
+              ng-click="imageTools.select('rotate')"
+              ng-class="{selected: imageTools.current == 'rotate'}"
+              tooltip="Drag to Rotate Image"
+              tooltip-placement="right"></span>
+    </div>
+    <div class="toolset toolset-middle">
+        <div class="zoom-slider-wrapper" zoom-tool>
+            <div class="zoom-slider"></div>
+            <div class="zoom-slide-bar" ng-style="{'top': imageTools.zoomSlider.pos}"></div>
+        </div>
+    </div>
+    <div class="toolset toolset-bottom">
+        <span class="tool glyphicon glyphicon-refresh"
+              ng-click="reset()"
+              tooltip="Reset Image"
+              tooltip-placement="right"></span>
+    </div>
+</div>
+
+<div class="item-detail-container" ng-class="$state.current.data.detailContainer">
+    <div class="toolbar toolbar-vert">
+        <div class="toolset pull-right">
+            <div ng-click="toggleState('.metadata')"
+                 class="tool glyphicon glyphicon-info-sign"
+                 ng-class="{'selected': $state.includes('collection.explorer.item.*.metadata')}"
+                 tooltip="About this item"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="About this item"
+                 ng-if="metadata"></div>
+
+            <div ng-click="toggleState('.transcripts')"
+                 class="tool glyphicon glyphicon-file"
+                 ng-class="{'selected': $state.includes('collection.explorer.item.*.transcripts')}"
+                 tooltip="Transcript"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="Transcript"></div>
+
+            <div ng-click="toggleState('.tags')"
+                 class="tool glyphicon glyphicon-tags"
+                 ng-class="{'selected': $state.includes('collection.explorer.item.*.tags')}"
+                 tooltip="Tags"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="Tags"></div>
+        </div>
+    </div>
+    <div ui-view="detail" class="detail" ng-class="$state.current.data.detailCss"></div>
+</div>

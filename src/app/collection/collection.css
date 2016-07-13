@@ -1,0 +1,117 @@
+
+.collection-title{
+    margin-bottom: 35px;
+    padding-left: 50px;
+}
+
+.collection-menu{
+    margin-top: -3px;
+}
+
+.collection-metadata{
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.indent{
+    padding-left:20px;
+}
+
+.indent p{
+    margin: 0;
+}
+
+.collapse-title-btn, .indent p{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.indent .indent .title-btn{
+    background-color: transparent;
+    color: #333;
+}
+
+.collapse-title-btn:hover{
+    cursor: pointer;
+}
+
+.collapse-title-btn:after{
+    display: relative;
+    float: right;
+    width: 0;
+    height: 0;
+    margin: 6px;
+    vertical-align: middle;
+    border-top: 8px solid;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    content: "";
+}
+
+.collapse-title-btn.collapsed:after{
+    display: relative;
+    float: right;
+    width: 0;
+    height: 0;
+    margin: 2px;
+    vertical-align: middle;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid;
+    content: "";
+}
+
+.initiallyHidden, .initiallyVisible {
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-bottom: 10px;
+    padding: 0 0 0 10px;
+}
+
+.initiallyHidden h4, .initiallyVisible h4{
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+.initiallyHidden > .collapse-title-btn,
+.initiallyVisible > .collapse-title-btn{
+    background-color: #ccc;
+    color: #333;
+}
+
+.initiallyHidden > .indent > .collapse-title-btn.collapsed:after,
+.initiallyVisible > .indent > .collapse-title-btn.collapsed:after{
+    border-left-color: #999;
+}
+
+.initiallyHidden > .indent > .collapse-title-btn,
+.initiallyVisible > .indent > .collapse-title-btn{
+    margin-top: 8px;
+    background-color: #eee;
+    color: #333;
+    border-left: 2px solid #eee;
+}
+
+.initiallyHidden > .indent > .collapse-title-btn:hover,
+.initiallyVisible > .indent > .collapse-title-btn:hover{
+    border-left-color: #ccc;
+}
+
+.initiallyHidden .initiallyHidden, .initiallyHidden .initiallyVisible, .initiallyVisible .initiallyHidden, .initiallyVisible .initiallyVisible{
+    border: none;
+}
+
+.initiallyHidden .initiallyHidden .initiallyHidden{
+    background-color: #e0e0e0;
+}
+
+.initiallyHidden .initiallyHidden .initiallyHidden .indent{
+    padding: 5px 0;
+}
+
+.initiallyHidden .initiallyHidden .collapse-title-btn,
+.initiallyHidden .initiallyHidden .initiallyHidden .collapse-title-btn{
+    color: #222 !important;
+}

@@ -1,0 +1,16 @@
+.search-thumbnail-wrapper{
+    width: 138px;
+    height: auto;
+    padding: 4px;
+    line-height: 1.428571429;
+    background-color: #333;
+    border: 1px solid #111;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.search-thumbnail{
+    margin: 0 auto;
+}

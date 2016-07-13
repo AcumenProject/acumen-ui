@@ -1,0 +1,57 @@
+<div class="toolbar toolbar-static row">
+    <div class="toolset toolset-menu">
+        <div class="btn-group" dropdown is-open="status.isopen">
+            <div type="button" class="tool fa fa-bars dropdown-toggle" ng-disabled="disabled">
+            </div>
+            <ul class="dropdown-menu" role="menu">
+
+                <li role="presentation" class="dropdown-header">Thumbnail List</li>
+                <li ng-class="{'disabled': printDisabled}" print-image="acumen.list.items">
+                    <a href="#" title="Icon placeholders are not printed">
+                        <i class="fa fa-fw fa-print text-muted"></i> Print List Items {{acumen.list.first}}-{{acumen.list.last}}
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li role="presentation" class="dropdown-header">Asset</li>
+                <li ng-class="{'disabled': !$state.includes('collection.explorer.item.**')}">
+                    <a ng-href="{{acumen.item.asset_path}}" title="Download image" target="_new" download>
+                        <i class="fa fa-fw fa-download text-muted"></i> Download {{acumen.item.type}}
+                    </a>
+                </li>
+                <li ng-class="{'disabled': printDisabled || !$state.includes('collection.explorer.item.**')}" print-image="acumen.item.asset_path">
+                    <a href="#" title="Print image">
+                        <i class="fa fa-fw fa-print text-muted"></i> Print Image
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="toolset toolset-title" ng-if="$state.includes('collection.explorer.item.**')">
+        <h3>{{acumen.item.title | truncate:95}}</h3>
+    </div>
+
+    <div class="toolset pull-right">
+        <div class="tool fa fa-keyboard-o"
+             tooltip="View hot keys menu"
+             tooltip-popup-delay="500"
+             ng-click="toggleHotKeys()"></div>
+        <div ng-click="gridToggle()"
+             class="tool glyphicon glyphicon-th grid-toggle"
+             ng-class="{'selected': $state.is('collection.explorer')}"
+             tooltip="Toggle Grid View"
+             tooltip-popup-delay="500"
+             title="Toggle Grid View"></div>
+        <div ng-click="toggle()"
+             class="tool glyphicon glyphicon-fullscreen"
+             ng-class="{'selected': selected}"
+             tooltip="Fullscreen (fills browser window)"
+             tooltip-popup-delay="500"
+             tooltip-placement="left"
+             fullscreen-button></div>
+    </div>
+</div>
+<div class="items-container row">
+    <div ui-view="list" class="items-list" id="items_list" ng-class="$state.current.data.itemsListCss"></div>
+    <div ui-view class="item-container" ng-class="$state.current.data.itemContainerCss"></div>
+</div>

@@ -1,0 +1,21 @@
+<h1 ng-bind-html="title" class="collection-title col-xs-9"></h1>
+<div class="col-xs-3 collection-menu text-right">
+    <div class="btn-group btn-group-sm">
+        <a ng-href="{{file.file_path}}"
+           rol="button"
+           class="btn btn-default"
+           target="{{file.id}}"
+           tooltip="View metadata source">{{file.type | uppercase}} <span class="glyphicon glyphicon-eye-open"></span></a>
+        <button type="button" class="btn btn-default" disabled="disabled">Updated: {{file.last_modified | date}}</button>
+    </div>
+</div>
+
+<div ui-view id="asset_explorer" class="explorer col-xs-12" ng-if="acumen.asset_explorer"></div>
+
+<div compile id="page_metadata" class="collection-metadata col-xs-9 col-xs-offset-1"></div>
+<div class="col-xs-2">
+    <div fixie-menu fixie-menu-offset="page_metadata" ng-if="collapseControls">
+        <button type="button" class="btn btn-default btn-block" ng-click="collapseAll()"><span class="fa fa-minus-square-o"></span> <span class="small">Collapse All</span></button>
+        <button type="button" class="btn btn-default btn-block" ng-click="expandAll()"><span class="fa fa-plus-square-o"></span> <span class="small">Expand All</span></button>
+    </div>
+</div>

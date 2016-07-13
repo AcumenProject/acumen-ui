@@ -1,0 +1,38 @@
+<div class="feedback-modal-container">
+    <div class="modal-header">
+        <h3 class="modal-title">Give us feedback!</h3>
+    </div>
+    <button type="button" class="close" ng-click="cancel()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <form rol="form" name="feedback_form" ng-submit="feedback_form.$valid && send()" novalidate>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" ng-model="feedback.name" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" ng-model="feedback.email" class="form-control" id="email" name="email" placeholder="Enter email" required />
+            </div>
+            <input type="text" class="dis-email" ng-model="feedback.confirm_email" id="confirm_email" name="confirm_email" placeholder="Confirm email" />
+            <div class="form-group">
+                <label for="category">What would you like to tell us?</label>
+                <select ng-model="feedback.category" class="form-control" id="category" name="category">
+                    <option>General feedback or suggestions for improvement</option>
+                    <option>Trouble with search functionality</option>
+                    <option>Trouble with the asset explorer</option>
+                    <option>Trouble viewing metadata</option>
+                    <option>Bug report</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="details">Details</label>
+                <textarea ng-model="feedback.details" class="form-control" id="details" name="details" rows="4" required></textarea>
+                <span class="small text-muted">When reporting a problem, please be as specific as possible. Be sure to include all relevant information such as links to problem pages, your browser information (e.g., Firefox 30, Internet Explorer 11), and what navigation steps caused the issue.</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-lg btn-block" ng-disabled="feedback_form.$invalid">Send Feedback</button>
+        </div>
+    </form>
+</div>

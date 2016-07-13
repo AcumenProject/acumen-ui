@@ -1,0 +1,6 @@
+<form rol="form" class="transcript-form" name="transcriptForm" ngvalidate>
+    <span class="label label-warning help-cursor" ng-show="transcript.isOCR" tooltip="This transcript was generated via OCR" tooltip-placement="left">OCR</span>
+    <input type="text" class="dis-email" ng-model="transcript.email" name="email" placeholder="Email" />
+    <textarea class="transcript-textarea" placeholder="Type a transcription." ng-model="transcript.value" required></textarea>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="addTranscript(transcript)" ng-disabled="transcriptForm.$invalid || isUnchanged(transcript)">Add Transcript</button>
+</form>

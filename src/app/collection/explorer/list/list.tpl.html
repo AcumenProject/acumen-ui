@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="list-info">
+            <span ng-if="pager.show">{{acumen.list.first}} - {{acumen.list.last}} <span class="list-info-muted">of</span></span> <span class="list-info-muted"> {{acumen.list.total | listTotals}}</span>
+        </div>
+    </div>
+    <div id="{{item.repo_loc}}" class="list-item" ng-class="$state.current.data.listItemCss" ng-repeat="item in list track by item.repo_loc" index="{{$index}}">
+        <a ng-href="{{ENV_PATH}}{{item.link}}"
+           class="thumbnail"
+           ng-class="{'selected': $stateParams.repoLoc[0] == item.repo_loc}">
+            <p class="small page-num">{{pageNum}}</p>
+            <img ng-src="{{item.thumb_url}}" />
+            <h5 class="item-title">{{title}}</h5>
+        </a>
+    </div>
+
+    <div class="col-xs-12 text-center" ng-if="pager.show">
+        <div pagination
+             class="grid-pagination pagination-sm"
+             ng-change="pageList()"
+             total-items="pager.total"
+             items-per-page="pager.perPage"
+             ng-model="pager.current"
+             max-size="pager.max"
+             boundary-links="true"
+             rotate="false"
+             num-pages="pager.numPages"></div>
+    </div>
+</div>

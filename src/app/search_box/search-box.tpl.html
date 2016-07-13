@@ -1,0 +1,45 @@
+<div class="searchbox-header jumbotron" >
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-2 text-center">
+                <a href="" ui-sref="search(acumen.prevSearchParams)"
+                   class="page-nav page-nav-left back-to-search fa fa-arrow-circle-left"
+                   tooltip="Back to search results"
+                   tooltip-placement="right"
+                   tooltip-append-to-body="true"
+                   ng-if="acumen.prevSearch"></a>
+            </div>
+            <div class="col-xs-8">
+                <form role="form-control" ng-submit="search()">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-btn" dropdown is-open="status.isopen">
+                            <button type="button" class="btn btn-default dropdown-toggle" ng-disabled="disabled">
+                                {{selected.title}} <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li class="dropdown-header">Search categories:</li>
+                                <li ng-repeat="(key, cat) in categories">
+                                    <a href="#" ng-click="select(key, $event)">{{cat.title}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <input name="q" type="text" class="form-control" id="q" placeholder="{{selected.placeHolder}}" ng-model="acumen.query">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary"><span class="fa fa-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-2 text-center">
+                <a ng-href="{{ENV_PATH}}{{acumen.collection.parent.link}}?page={{acumen.collection.toPage}}"
+                   class="page-nav page-nav-right fa fa-arrow-circle-up"
+                   tooltip='Go to parent collection: "{{acumen.collection.parent.title}}"'
+                   tooltip-placement="bottom"
+                   title="Go to parent collection: {{acumen.collection.parent.title}}"
+                   ng-if="acumen.collection.parent.id > 0"
+                   to-parent></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+
+.video-row{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.video-row > .item{
+    height: 100%;
+}
+
+.video-player-wrapper{
+    position: relative;
+    height: 496px;
+    /*background-color: #111;*/
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.video-default{
+    margin-right: 40px;
+}
+
+video{
+    max-width: 100%;
+}
+
+.mejs-video, .video-player-wrapper {
+    width: auto !important;
+    height: 100% !important;
+}
+.mejs-overlay, .mejs-poster {
+    width: 100% !important;
+    height: 100% !important;
+}
+.mejs-mediaelement video {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+}

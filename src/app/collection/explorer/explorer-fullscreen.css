@@ -1,0 +1,39 @@
+.body-fullscreen{
+    overflow: hidden;
+}
+
+.fullscrn{
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+}
+
+.fullscrn > .explorer{
+    height: 100%;
+    margin-top: -52px;
+    padding-top:52px;
+}
+
+.fullscrn > .toolbar{
+    background-color: #444;
+    border: none;
+}
+
+.fullscrn > .toolbar .tool{
+
+}
+
+.fullscrn > .toolbar .tool:hover{
+}
+
+.toolset-fullscreen-nav, .toolset-fullscreen-nav .btn-group{
+    border: none !important;
+    padding: 0 !important;
+}
+
+.toolset-fullscreen-nav .btn, .toolset-fullscreen-nav .btn:visited{
+    color: #fff;
+    text-shadow:0px -1px 0px rgba(17, 25, 51, 0.8);
+}

@@ -1,0 +1,8 @@
+<div class="tags-container">
+    <button class="tag-btn btn btn-primary" ng-click="tagSearch(tag)" ng-class="tag.status" ng-repeat="tag in tags" ng-mouseenter="tagsearch = {color: '#ccc'}" ng-mouseleave="tagsearch = {}">{{tag.value}} <span class="glyphicon glyphicon-chevron-right" ng-style="tagsearch"></span></button>
+</div>
+<form rol="form" class="tags-form" name="tagsForm" ngvalidate>
+    <input type="text" class="dis-email" ng-model="input.email" name="email" placeholder="Email" />
+    <textarea class="tags-textarea" ng-model="input.tags" required placeholder="Add tags separated by commas."></textarea>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="addTags(input)" ng-disabled="tagsForm.$invalid">Add Tags</button>
+</form>

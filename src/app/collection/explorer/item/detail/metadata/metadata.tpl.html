@@ -1,0 +1,5 @@
+<div class="item-metadata-menu btn-group btn-group-sm">
+    <a ng-href="{{metadata.file_path}}" rol="button" class="btn btn-default" target="{{metadata.file_name}}" tooltip="View metadata source">{{metadata.type | uppercase}} <span class="glyphicon glyphicon-eye-open"></span></a>
+    <button type="button" class="btn btn-default" disabled="disabled">Updated: {{metadata.last_modified | date}}</button>
+</div>
+<div class="compile item-metadata"></div>

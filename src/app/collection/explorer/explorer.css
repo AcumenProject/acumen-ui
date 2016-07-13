@@ -1,0 +1,149 @@
+.explorer{
+    margin-bottom: 20px;
+    position: relative;
+    background-color: #171717;
+    height: 600px;
+    padding-right: 0;
+    padding-left: 0;
+    -webkit-box-shadow: inset 0px -5px 5px 0px rgba(50, 50, 50, 0.55);
+    -moz-box-shadow:    inset 0px -5px 5px 0px rgba(50, 50, 50, 0.55);
+    box-shadow:         inset 0px -5px 5px 0px rgba(50, 50, 50, 0.55);
+}
+
+.item-container .row, .explorer [ui-view]{
+    height:100%;
+}
+
+.items-container{
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -52px;
+    padding-top: 52px;
+    height: 100%;
+}
+
+/**
+* Toolbar Styles
+**/
+
+
+.toolbar{
+    color: #ccc;
+    position: relative;
+    height: 52px;
+    /*width: 100%;*/
+    background-color: #222222;
+    padding: 0 20px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #131313;
+}
+
+.toolbar-vert{
+    position:relative;
+    float: left;
+    width: 40px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    border-left: 1px solid #171717;
+    border-right: 1px solid #171717;
+}
+
+.toolbar-static{
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+.item-toolbar, .list-toolbar{
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.item-toolbar,.toolset-global{
+    border-left: 1px solid #131313;
+}
+.toolset-global{
+    background-color: #333;
+}
+
+/**
+* Toolset Styles
+**/
+
+.toolset{
+    height:100%;
+    padding: 0 12px;
+    float: left;
+    /*border-left: 1px solid #111;*/
+}
+
+.toolset h3{
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-top: 15px;
+    color: #eee;
+}
+
+.toolbar-vert > .toolset{
+    height:auto;
+    padding: 12px 0;
+    float: none;
+    border: none;
+}
+
+.toolset-center{
+    position: absolute;
+    left: 50%;
+}
+
+.toolset-top{
+    top: 10px;
+}
+
+.toolset-middle{
+    top: 25%;
+}
+
+.toolset-bottom{
+    position:absolute;
+    bottom: 0;
+}
+
+/**
+* Tool Styles
+**/
+
+.tool, .tool:visited{
+    color: #999999;
+    padding: 12px 6px;
+    font-size: 24px;
+}
+
+.tool.selected, .tool:hover{
+    cursor: pointer;
+    color: #f6f6f6;
+    text-decoration: none;
+}
+
+.tool.disabled, .tool.disabled:hover{
+    color: #666;
+    cursor: not-allowed;
+}
+
+.tool > .caret{
+    border-width: 6px;
+    margin-left: 8px;
+}
+
+.toolset-menu .tool{
+    color: #eee;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, .8);
+}
+
+.toolset-menu .tool:hover{
+    color: #70b8f7;
+}

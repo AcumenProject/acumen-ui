@@ -1,0 +1,48 @@
+<div ng-if="error.status == 301">
+    <div class="alert alert-warning">
+        <p class="lead" style="padding-left: 60px;">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>  Error code: {{error.status}} - {{error.data.msg.warning}}
+        </p>
+    </div>
+    <div class="jumbotron" style="padding-top: 15px;">
+        <div class="container">
+            <div class="row">
+                <div class="hidden-sm hidden-xs col-md-3">
+                    <div style="font-size: 14em;">
+                        <span class="glyphicon glyphicon-transfer" style="color: #CC4A14;"></span>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h1>Looking for <br><strong>{{error.data.msg.found.title}}</strong>?</h1>
+                    <blockquote style="border-left-color: #ccc;">
+                        <p>Replace your link or bookmark with this PURL and never see this page again: <strong>{{error.data.msg.found.purl}}</strong></p>
+                    </blockquote>
+                    <a class="btn btn-primary btn-lg" ng-href="{{ENV_PATH}}{{error.data.msg.found.link}}">Go there now <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="error.status == 404">
+    <div class="alert alert-danger">
+        <p class="lead" style="padding-left: 60px;">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>  Error code: {{error.status}} - {{error.data.msg.error}}
+        </p>
+    </div>
+    <div class="jumbotron" style="padding-top: 15px;">
+        <div class="container">
+            <div class="row">
+                <div class="hidden-sm hidden-xs col-md-3">
+                    <div style="font-size: 14em;">
+                        <span class="glyphicon glyphicon-remove-circle" style="color: #990000;"></span>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <h1>Oops!</h1>
+                    <p class="lead">It looks like there is nothing here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.disclaimer-modal-container > .close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.disclaimer-modal-container > .modal-footer{
+    margin-top: 0;
+}

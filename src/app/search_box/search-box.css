@@ -1,0 +1,14 @@
+.searchbox-header{
+    margin-bottom: 0;
+    background-color: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.welcome-container{
+    padding-bottom: 30px;
+}
+
+.welcome-container h1{
+    display: inline;
+    margin-bottom: 15px;
+}

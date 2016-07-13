@@ -1,0 +1,37 @@
+<div class="item-detail-container" ng-class="$state.current.data.detailContainer">
+    <div class="toolbar toolbar-vert">
+        <div class="toolset pull-right">
+            <div ng-click="closeDetail()"
+                 class="tool glyphicon glyphicon-info-sign"
+                 ng-class="{'selected': $state.is('collection.explorer.item.audio')}"
+                 tooltip="About this item"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="About this item"
+                 ng-show="itemMetadata"></div>
+
+            <div ng-click="toggleState('.transcripts')"
+                 class="tool glyphicon glyphicon-file"
+                 ng-class="{'selected': $state.is('collection.explorer.item.audio.transcripts')}"
+                 tooltip="Transcript"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="Transcript"></div>
+
+            <div ng-click="toggleState('.tags')"
+                 class="tool glyphicon glyphicon-tags"
+                 ng-class="{'selected': $state.includes('collection.explorer.item.audio.tags')}"
+                 tooltip="Tags"
+                 tooltip-placement="left"
+                 tooltip-popup-delay="300"
+                 title="Tags"></div>
+        </div>
+    </div>
+    <div ui-view="detail" class="detail" ng-class="$state.current.data.detailCss"></div>
+</div>
+<div class="audio-player-wrapper">
+    <div class="audio-metadata">
+        <div class="compile detail-metadata-container" ng-class="$state.current.data.itemMetadataCss" ng-if="metadata"></div>
+    </div>
+    <audio class="asset-audio" ng-src="{{item.asset_path}}" mediaelement="audio"></audio>
+</div>
